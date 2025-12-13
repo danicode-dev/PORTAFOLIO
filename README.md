@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="profile/assets/banner.svg" alt="Banner" width="100%">
+  <img src="profile/assets/banner.svg" alt="Banner" width="400">
 </div>
 
 <div align="center">
 
-  ### \uD83D\uDC4B ¡Hola! Soy Daniel.
+  ###  ¡Hola! Soy Daniel.
   **Desarrollador Web (DAW) · Java Enthusiast · Aprendiendo cada día**
 
   [<img src="https://img.shields.io/badge/Portfolio-Ver%20Web-38bdf8?style=for-the-badge&logo=google-chrome&logoColor=white">](https://danicode-dev.github.io/)
@@ -15,7 +15,7 @@
 
 ---
 
-### \uD83D\uDEE0\uFE0F Tech Stack
+### Tech Stack
 
 <div align="center">
   <a href="https://skillicons.dev">
@@ -26,7 +26,7 @@
 ---
 
 <!-- PROJECTS:START -->
-### \u2B50 Proyectos Destacados (Featured)
+###  Proyectos Destacados (Featured)
 
 | Proyecto | Detalles |
 | :--- | :--- |

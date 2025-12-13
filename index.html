@@ -5,15 +5,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Garcia | Portfolio</title>
+    <title>danicode-dev | Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
 </head>
 
 <body>
+    <div id="particles-js"></div>
     <header>
         <div class="container">
             <nav>
@@ -30,7 +32,7 @@
 
     <section id="home" class="hero">
         <div class="container hero-content">
-            <h1>Hola, soy Daniel <br><span>Desarrollador Web</span></h1>
+            <h1><span class="hero-label">PORTAFOLIO</span><span class="hero-name">danicode-dev</span></h1>
             <p>Creando experiencias digitales modernas, rápidas y visualmente impactantes. Estudiante de DAW apasionado
                 por el código limpio.</p>
             <a href="#projects" class="btn">Ver Mis Proyectos</a>
@@ -44,15 +46,26 @@
                 <!-- Project 1: Hangman -->
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="profile/assets/previews/ahorcado.png" alt="Ahorcado Preview"
-                            style="width: 100%; height: auto; display: block;">
+                        <svg class="project-icon" width="80" height="80" viewBox="0 0 80 80" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M40 10L50 30H30L40 10Z" fill="currentColor" opacity="0.2" />
+                            <circle cx="40" cy="45" r="15" stroke="currentColor" stroke-width="2" fill="none" />
+                            <text x="40" y="52" font-size="20" fill="currentColor" text-anchor="middle">{ }</text>
+                        </svg>
                     </div>
                     <div class="project-info">
                         <h3>Juego del Ahorcado</h3>
                         <p>Una implementación robusta en Java del clásico juego, con gestión de diccionario y lógica
                             avanzada.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Console</span>
+                            <span class="tag">OOP</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" class="link-btn">Ver Código <i class="fas fa-arrow-right"></i></a>
+                            <a href="https://github.com/danicode-dev" class="link-btn" target="_blank" rel="noopener">
+                                <i class="fas fa-code"></i> Ver Código
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -60,32 +73,65 @@
                 <!-- Project 2: Form Practice -->
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="profile/assets/previews/formulario.png" alt="Formulario Preview"
-                            style="width: 100%; height: auto; display: block;">
+                        <svg class="project-icon" width="80" height="80" viewBox="0 0 80 80" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="15" y="15" width="50" height="50" rx="4" stroke="currentColor" stroke-width="2"
+                                fill="none" />
+                            <line x1="25" y1="30" x2="55" y2="30" stroke="currentColor" stroke-width="2" />
+                            <line x1="25" y1="40" x2="55" y2="40" stroke="currentColor" stroke-width="2" />
+                            <line x1="25" y1="50" x2="45" y2="50" stroke="currentColor" stroke-width="2" />
+                        </svg>
                     </div>
                     <div class="project-info">
                         <h3>Gestor de Formularios</h3>
                         <p>Práctica completa de HTML, CSS y JS validando formularios dinámicos sin librerías externas.
                         </p>
+                        <div class="tech-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
                         <div class="project-links">
-                            <a href="https://danicode-dev.github.io/FORMULARIO-/" class="link-btn">Ver Demo <i
-                                    class="fas fa-external-link-alt"></i></a>
+                            <a href="https://danicode-dev.github.io/FORMULARIO-/" class="link-btn" target="_blank"
+                                rel="noopener">
+                                <i class="fas fa-external-link-alt"></i> Ver Demo
+                            </a>
+                            <a href="https://github.com/danicode-dev/FORMULARIO-" class="link-btn link-btn-secondary"
+                                target="_blank" rel="noopener">
+                                <i class="fas fa-code"></i> Código
+                            </a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Project 3: Placeholder -->
+                <!-- Project 3: Typing Test -->
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="profile/assets/previews/test_mecanografia.png" alt="Test Mecanografía Preview"
-                            style="width: 100%; height: auto; display: block;">
+                        <svg class="project-icon" width="80" height="80" viewBox="0 0 80 80" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="25" width="60" height="35" rx="3" stroke="currentColor" stroke-width="2"
+                                fill="none" />
+                            <rect x="15" y="32" width="6" height="6" rx="1" fill="currentColor" opacity="0.3" />
+                            <rect x="24" y="32" width="6" height="6" rx="1" fill="currentColor" opacity="0.3" />
+                            <rect x="33" y="32" width="6" height="6" rx="1" fill="currentColor" opacity="0.3" />
+                            <rect x="42" y="32" width="6" height="6" rx="1" fill="currentColor" />
+                            <rect x="51" y="32" width="6" height="6" rx="1" fill="currentColor" opacity="0.3" />
+                            <rect x="60" y="32" width="6" height="6" rx="1" fill="currentColor" opacity="0.3" />
+                        </svg>
                     </div>
                     <div class="project-info">
                         <h3>Test de Mecanografía</h3>
                         <p>Test de velocidad estilo Monkeytype. Minimalista y con estadísticas en tiempo real.</p>
+                        <div class="tech-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
                         <div class="project-links">
-                            <a href="https://danicode-dev.github.io/Test_mecagonagrafia/" class="link-btn">Jugar Ahora
-                                <i class="fas fa-keyboard"></i></a>
+                            <a href="https://danicode-dev.github.io/Test_mecagonagrafia/" class="link-btn"
+                                target="_blank" rel="noopener">
+                                <i class="fas fa-keyboard"></i> Jugar Ahora
+                            </a>
                         </div>
                     </div>
                 </article>

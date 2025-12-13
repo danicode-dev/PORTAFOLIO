@@ -36,7 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize particles only if motion is allowed
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    console.log('[Particles] Checking if particlesJS is available:', typeof particlesJS);
+    console.log('[Particles] Prefers reduced motion:', prefersReducedMotion);
+
     if (!prefersReducedMotion && typeof particlesJS !== 'undefined') {
+        console.log('[Particles] Initializing particles...');
         particlesJS('particles-js', {
             particles: {
                 number: {

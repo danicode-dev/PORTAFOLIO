@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initTypingAnimation();
     initDownloadCV();
+    initEmailCopy();
 });
 
 function initCacheCleanup() {
@@ -596,50 +597,29 @@ function initContactForm() {
 }
 
 
-// ===== Typing Animation =====
+// ===== Typing Animation (Single Write) =====
 function initTypingAnimation() {
     const element = document.getElementById('typing-text');
     if (!element) return;
 
-    const phrases = [
-        'Web Developer',
-        'Digital Creator',
-        'Frontend Enthusiast',
-        'Problem Solver'
-    ];
-
-    let phraseIndex = 0;
+    const phrase = 'Web Developer';
     let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 100;
 
     function type() {
-        const currentPhrase = phrases[phraseIndex];
-        
-        if (isDeleting) {
-            element.textContent = currentPhrase.substring(0, charIndex - 1);
-            charIndex--;
-            typingSpeed = 50;
-        } else {
-            element.textContent = currentPhrase.substring(0, charIndex + 1);
+        if (charIndex <= phrase.length) {
+            element.textContent = phrase.substring(0, charIndex);
             charIndex++;
-            typingSpeed = 100;
+            setTimeout(type, 100);
+        } else {
+            // Hide cursor after typing complete
+            const cursor = document.querySelector('.typing-cursor');
+            if (cursor) {
+                setTimeout(() => { cursor.style.opacity = '0'; }, 1000);
+            }
         }
-
-        if (!isDeleting && charIndex === currentPhrase.length) {
-            isDeleting = true;
-            typingSpeed = 2000; // Pause at end
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            typingSpeed = 500; // Pause before next phrase
-        }
-
-        setTimeout(type, typingSpeed);
     }
 
-    // Start after a short delay
-    setTimeout(type, 1000);
+    setTimeout(type, 500);
 }
 
 // ===== Download CV =====
@@ -647,10 +627,39 @@ function initDownloadCV() {
     const btn = document.getElementById('download-cv');
     if (!btn) return;
 
-    btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        // TODO: Replace with actual CV URL
-        alert('CV download feature coming soon! Add your CV file to assets/cv.pdf');
-        // window.open('./assets/cv.pdf', '_blank');
+    // Button will work once you add assets/cv.pdf
+    // For now it just opens the link normally
+}
+
+// ===== Copy Email to Clipboard =====
+function initEmailCopy() {
+    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+    const email = 'webdaniel2025@gmail.com';
+
+    emailLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigator.clipboard.writeText(email).then(() => {
+                // Show feedback
+                const originalText = link.innerHTML;
+                const parent = link.closest('.contact-link-content');
+                if (parent) {
+                    const valueSpan = parent.querySelector('.contact-link-value');
+                    if (valueSpan) {
+                        valueSpan.textContent = '¡Copiado!';
+                        valueSpan.style.color = 'var(--accent-green)';
+                        setTimeout(() => {
+                            valueSpan.textContent = email;
+                            valueSpan.style.color = '';
+                        }, 2000);
+                    }
+                } else {
+                    alert('Email copiado: ' + email);
+                }
+            }).catch(() => {
+                // Fallback: open mailto
+                window.location.href = 'mailto:' + email;
+            });
+        });
     });
 }

@@ -385,53 +385,35 @@ nav {
   box-shadow: 0 8px 24px rgba(63, 185, 80, 0.3);
 }
 
-/* ===== Tech Stack Section ===== */
-.tech-stack {
-  padding: 4rem 0;
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  overflow: hidden;
-}
-
-.tech-stack .section-title {
-  margin-bottom: 2rem;
-}
-
-/* Marquee Animation */
-.marquee-wrapper {
-  position: relative;
+/* Tech Stack Marquee (Inside Hero) */
+.tech-marquee {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
   width: 100%;
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 30s linear infinite;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-
-.marquee-content {
+.tech-marquee-track {
   display: flex;
   gap: 1rem;
-  padding-right: 1rem;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.tech-marquee-track:hover {
+  animation-play-state: paused;
 }
 
 .tech-chip {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.625rem 1rem;
-  background: var(--bg-primary);
+  padding: 0.5rem 1rem;
+  background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 50px;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-primary);
   white-space: nowrap;
@@ -444,7 +426,7 @@ nav {
 }
 
 .tech-chip i {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--accent-blue);
 }
 
@@ -460,18 +442,11 @@ nav {
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track {
+  .tech-marquee-track {
     animation: none;
-  }
-
-  .marquee-content:last-child {
-    display: none;
-  }
-
-  .marquee-wrapper {
-    overflow-x: auto;
-    mask-image: none;
-    -webkit-mask-image: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
   }
 }
 

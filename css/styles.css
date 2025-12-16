@@ -1898,6 +1898,106 @@ button.contact-link:hover {
   }
 }
 
+/* ===== Featured Projects - Marquee ===== */
+.projects-marquee {
+  --projects-marquee-gap: 2rem;
+  margin-top: 2.25rem;
+  position: relative;
+}
+
+.projects-track {
+  display: flex;
+  width: 100%;
+}
+
+.projects-marquee--animate {
+  overflow: hidden;
+  padding: 0.75rem 0.25rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.projects-marquee--animate .projects-track {
+  width: max-content;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  animation: projectsMarqueeScroll var(--projects-marquee-duration, 40s) linear infinite;
+}
+
+.projects-marquee--animate .projects-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: var(--projects-marquee-gap);
+  padding-right: var(--projects-marquee-gap);
+}
+
+.projects-marquee--animate .project-card {
+  flex: 0 0 clamp(280px, 32vw, 360px);
+}
+
+.projects-marquee:hover .projects-track,
+.projects-marquee:focus-within .projects-track {
+  animation-play-state: paused;
+}
+
+@keyframes projectsMarqueeScroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(calc(-1 * var(--projects-marquee-distance, 0px)), 0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-marquee {
+    --projects-marquee-gap: 1.25rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5rem 0.25rem 1rem;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
+    -webkit-mask-image: none;
+    mask-image: none;
+    scrollbar-width: none;
+  }
+
+  .projects-marquee::-webkit-scrollbar {
+    display: none;
+  }
+
+  .projects-marquee .projects-track {
+    width: max-content;
+    animation: none !important;
+  }
+
+  .projects-marquee .projects-group {
+    display: flex;
+    flex: 0 0 auto;
+    gap: var(--projects-marquee-gap);
+    padding-right: var(--projects-marquee-gap);
+  }
+
+  .projects-marquee .project-card {
+    flex: 0 0 min(84vw, 360px);
+    scroll-snap-align: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-marquee--animate {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .projects-marquee--animate .projects-track {
+    animation: none;
+    transform: none;
+  }
+}
+
 /* Particles Canvas */
 #particles-canvas {
   position: absolute;

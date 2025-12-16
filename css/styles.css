@@ -415,6 +415,51 @@ nav {
   box-shadow: 0 8px 24px rgba(63, 185, 80, 0.3);
 }
 
+/* Hero Secondary Button */
+.btn-hero-secondary {
+  background: transparent;
+  border: 2px solid var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(88, 166, 255, 0.1);
+  color: var(--accent-blue);
+  box-shadow: 0 8px 24px rgba(88, 166, 255, 0.2);
+}
+
+/* Hero Social Icons */
+.hero-social {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.hero-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-social-link:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-blue);
+  background: rgba(88, 166, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(88, 166, 255, 0.2);
+}
+
 /* Tech Stack Marquee (Inside Hero) */
 .tech-marquee {
   position: absolute;

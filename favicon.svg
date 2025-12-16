@@ -1,8 +1,7 @@
-<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-  <!-- Left Vertical Bar -->
-  <rect x="10" y="8" width="18" height="48" rx="4" fill="#58A6FF" />
-  <!-- Top Right Block -->
-  <rect x="34" y="8" width="20" height="21" rx="4" fill="#58A6FF" />
-  <!-- Bottom Right Block -->
-  <rect x="34" y="35" width="20" height="21" rx="4" fill="#58A6FF" />
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="16" fill="#0D1117"/>
+    <!-- D: Blue Triangle pointing right -->
+    <path d="M14 18L34 32L14 46V18Z" fill="#58A6FF" stroke="#58A6FF" stroke-width="4" stroke-linejoin="round"/>
+    <!-- G: White angular shape interlocking -->
+    <path d="M30 46H50V28L40 36" stroke="#E6EDF3" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

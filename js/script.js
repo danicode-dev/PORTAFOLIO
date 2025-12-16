@@ -598,29 +598,54 @@ function initContactForm() {
 }
 
 
-// ===== Typing Animation (Single Write) =====
+// ===== Typing Animation for Name =====
 function initTypingAnimation() {
-    const element = document.getElementById('typing-text');
+    const element = document.getElementById('typing-name');
+    const cursor = document.getElementById('name-cursor');
     if (!element) return;
 
-    const phrase = 'Full Stack Developer';
+    // Get text from data attribute
+    const text = element.dataset.text || 'Daniel García';
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+        // Show text immediately without animation
+        element.textContent = text;
+        if (cursor) {
+            cursor.style.display = 'none';
+        }
+        return;
+    }
+
+    // Typing animation config
+    const config = {
+        charDelay: 55,         // ms per character (elegant speed)
+        startDelay: 400,       // ms before starting
+        cursorFadeDelay: 1500  // ms after typing to fade cursor
+    };
+
     let charIndex = 0;
 
-    function type() {
-        if (charIndex <= phrase.length) {
-            element.textContent = phrase.substring(0, charIndex);
+    function typeChar() {
+        if (charIndex <= text.length) {
+            element.textContent = text.substring(0, charIndex);
             charIndex++;
-            setTimeout(type, 100);
+            setTimeout(typeChar, config.charDelay);
         } else {
-            // Hide cursor after typing complete
-            const cursor = document.querySelector('.typing-cursor');
+            // Typing complete - fade out cursor
             if (cursor) {
-                setTimeout(() => { cursor.style.opacity = '0'; }, 1000);
+                setTimeout(() => {
+                    cursor.style.transition = 'opacity 0.5s ease';
+                    cursor.style.opacity = '0';
+                }, config.cursorFadeDelay);
             }
         }
     }
 
-    setTimeout(type, 500);
+    // Start typing after initial delay
+    setTimeout(typeChar, config.startDelay);
 }
 
 // ===== Download CV =====

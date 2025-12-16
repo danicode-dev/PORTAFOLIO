@@ -55,42 +55,103 @@
         <main>
             <section id="home" class="hero">
                 <canvas id="particles-canvas"></canvas>
-                <div class="container hero-content">
-                    <!-- Label -->
+                <div class="container">
+                    <div class="hero-grid">
+                        <!-- Left Column: Main Content -->
+                        <div class="hero-left">
+                            <!-- Kicker -->
+                            <span class="hero-kicker">Hi, I'm</span>
 
+                            <!-- Name with Typing Effect -->
+                            <h1 class="hero-name">
+                                <span class="typing-name" id="typing-name" data-text="Daniel García"></span><span
+                                    class="typing-cursor" id="name-cursor">|</span>
+                            </h1>
 
-                    <!-- Main Title -->
-                    <h1 class="hero-title">
-                        <span class="typing-text" id="typing-text"></span><span class="typing-cursor">|</span>
-                    </h1>
+                            <!-- Role -->
+                            <h2 class="hero-role">Full Stack Developer</h2>
 
-                    <!-- Description -->
+                            <!-- Subtitle -->
+                            <p class="hero-subtitle">
+                                Construyo experiencias web modernas con Java, JavaScript y bases de datos. Enfocado en
+                                proyectos reales y código limpio.
+                            </p>
 
+                            <!-- CTA Buttons -->
+                            <div class="hero-buttons">
+                                <a href="#projects" class="btn-hero btn-hero-primary">
+                                    Explore Projects
+                                </a>
+                                <a href="./assets/cv.pdf" class="btn-hero btn-hero-secondary" download>
+                                    <i class="fas fa-download"></i> Download CV
+                                </a>
+                            </div>
 
-                    <!-- CTA Buttons -->
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn-hero">
-                            Explore Projects
-                        </a>
-                        <a href="cv/cv_es.html" class="btn-hero btn-hero-secondary" target="_blank">
-                            <i class="fas fa-file-alt"></i> Download CV
-                        </a>
-                    </div>
+                            <!-- Social Icons -->
+                            <div class="hero-social">
+                                <a href="https://github.com/danicode-dev" target="_blank" rel="noopener noreferrer"
+                                    aria-label="GitHub" class="hero-social-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/danielgarcíaortega-404754385" target="_blank"
+                                    rel="noopener noreferrer" aria-label="LinkedIn" class="hero-social-link">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <button type="button" class="hero-social-link copy-email-btn"
+                                    data-email="webdaniel2025@gmail.com" aria-label="Copy email" title="Copy email">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                            </div>
+                        </div>
 
-                    <!-- Social Icons -->
-                    <div class="hero-social">
-                        <a href="https://github.com/danicode-dev" target="_blank" rel="noopener noreferrer"
-                            aria-label="GitHub" class="hero-social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/danielgarcíaortega-404754385" target="_blank"
-                            rel="noopener noreferrer" aria-label="LinkedIn" class="hero-social-link">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <button type="button" class="hero-social-link copy-email-btn"
-                            data-email="webdaniel2025@gmail.com" aria-label="Copiar email" title="Copiar email">
-                            <i class="fas fa-envelope"></i>
-                        </button>
+                        <!-- Right Column: About Card -->
+                        <div class="hero-right">
+                            <div class="about-card">
+                                <h3 class="about-card-title">About</h3>
+
+                                <div class="about-card-info">
+                                    <div class="about-info-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Based in Granada, Spain</span>
+                                    </div>
+                                    <div class="about-info-item">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <span>DAW Student • Java + Web Dev</span>
+                                    </div>
+                                </div>
+
+                                <div class="about-card-stack">
+                                    <div class="stack-item">
+                                        <span class="stack-label">Front-end</span>
+                                        <span class="stack-value">HTML, CSS, JavaScript</span>
+                                    </div>
+                                    <div class="stack-item">
+                                        <span class="stack-label">Back-end</span>
+                                        <span class="stack-value">Java, MySQL</span>
+                                    </div>
+                                    <div class="stack-item">
+                                        <span class="stack-label">Tools</span>
+                                        <span class="stack-value">Git/GitHub, Linux</span>
+                                    </div>
+                                </div>
+
+                                <div class="about-card-badges">
+                                    <span class="status-badge status-available">
+                                        <span class="status-dot"></span>
+                                        Open to internship
+                                    </span>
+                                    <span class="status-badge status-projects">
+                                        <i class="fas fa-rocket"></i>
+                                        Available for projects
+                                    </span>
+                                </div>
+
+                                <div class="about-card-now">
+                                    <span class="now-label">Now building</span>
+                                    <span class="now-value">Portfolio + real apps for daily use</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

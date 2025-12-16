@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initScrollReveal();
     initProjectsMenu();
+    initProjectsMarquee();
     initContactForm();
     initTypingAnimation();
     initDownloadCV();
@@ -718,10 +719,6 @@ function initParticles() {
         init();
     });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    initProjectsMarquee();
-});
 
 function initProjectsMarquee() {
     const marquee = document.querySelector('[data-projects-marquee]');

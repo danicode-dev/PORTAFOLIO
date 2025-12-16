@@ -486,7 +486,7 @@ nav {
 }
 
 /* Hero Grid - Two Column Layout */
-.hero-grid {
+.hero-layout-grid {
   display: grid;
   grid-template-columns: 1fr 380px;
   gap: 4rem;
@@ -859,7 +859,7 @@ nav {
 
 /* ===== Hero Responsive ===== */
 @media (max-width: 1024px) {
-  .hero-grid {
+  .hero-layout-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: center;

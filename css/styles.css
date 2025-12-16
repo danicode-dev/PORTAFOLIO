@@ -873,22 +873,26 @@ nav {
   flex: 0 0 auto;
   padding: 0.6rem 1.2rem;
 
-  /* Glass Chip Style */
-  background: rgba(22, 27, 34, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Visible Chip Style */
+  background: #1e252e;
+  /* Solid dark color matching theme but visible */
+  border: 1px solid #4a525d;
+  /* Softer but visible border */
 
   border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-primary);
+  font-size: 0.95rem;
+  /* Slightly larger text */
+  font-weight: 600;
+  /* Bolder text */
+  color: #ffffff;
+  /* Pure white text */
   white-space: nowrap;
   transition: all 0.3s ease;
 
   /* Ensure visibility */
   opacity: 1;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  /* Stronger shadow */
 }
 
 .tech-chip:hover {

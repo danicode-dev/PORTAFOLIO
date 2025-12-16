@@ -298,7 +298,7 @@ nav {
   text-decoration: none;
 }
 
-.logo-icon {
+.logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -310,7 +310,7 @@ nav {
   transition: all 0.3s ease;
 }
 
-.logo-icon img {
+.logo-wrapper img {
   width: 44px;
   height: 44px;
   object-fit: contain;

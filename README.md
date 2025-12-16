@@ -4,7 +4,7 @@ Mi portfolio personal hecho con HTML, CSS y JavaScript vanilla.
 
 ## 🔗 Demo
 
-https://danicode-dev.github.io/PORTAFOLIO/
+https://danicode-dev.github.io/PORTFOLIO/
 
 ## 📂 Estructura
 

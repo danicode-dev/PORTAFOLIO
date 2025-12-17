@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-danicode",
+  "version": "1.0.0",
+  "description": "Portfolio personal de danicode-dev",
+  "scripts": {
+    "deploy": "node deploy.js"
+  },
+  "author": "danicode-dev",
+  "license": "MIT"
+}

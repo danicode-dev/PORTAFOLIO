@@ -1039,7 +1039,8 @@ nav {
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "BLED" 39, "SCAN" -11;
-  font-size: clamp(1.6rem, 4vw, 3rem);
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  white-space: nowrap;
   line-height: 1.2;
   color: #FFFFFF;
   letter-spacing: 0.02em;
@@ -3195,7 +3196,7 @@ button.contact-link:hover {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  margin: 4px 0 6px;
+  margin: 2px 0 2px;
 }
 
 /* Separator lines on sides of category */

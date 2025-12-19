@@ -2919,95 +2919,46 @@ button.contact-link:hover {
   z-index: 1;
 }
 
-/* Floating Astronaut */
+/* Floating Astronaut - Static version */
 .floating-astronaut {
   position: fixed;
   z-index: 100;
   width: 70px;
   height: auto;
   pointer-events: auto;
-  /* Bounce movement: using X and Y separate animations for better bouncing effect */
-  animation:
-    moveX 60s linear infinite alternate,
-    moveY 73s linear infinite alternate;
-  left: 0;
-  top: 0;
-  will-change: transform;
+  /* Fixed position: bottom right corner */
+  right: 20px;
+  bottom: 20px;
+  /* No animations */
+  animation: none;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .floating-astronaut img {
   width: 100%;
   height: auto;
-  animation: spinAstronaut 20s linear infinite;
-  filter: drop-shadow(0 0 10px rgba(255, 160, 50, 0.6));
-  transition: transform 0.3s ease;
+  /* No rotation animation */
+  animation: none;
+  filter: drop-shadow(0 0 8px rgba(255, 160, 50, 0.4));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.floating-astronaut:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 .floating-astronaut:hover img {
-  filter: drop-shadow(0 0 20px rgba(255, 160, 50, 0.9));
-  /* Pause rotation on hover if desired, or speed up */
-  animation-play-state: paused;
+  filter: drop-shadow(0 0 15px rgba(255, 160, 50, 0.7));
 }
 
-/* Linear bounce movement */
-@keyframes moveX {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: calc(100vw - 70px);
-  }
-}
-
-@keyframes moveY {
-  from {
-    top: 0;
-  }
-
-  to {
-    top: calc(100vh - 70px);
-  }
-}
-
-/* Self rotation */
-@keyframes spinAstronaut {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Mobile check */
+/* Mobile: smaller and repositioned */
 @media (max-width: 768px) {
   .floating-astronaut {
     width: 50px;
-    animation:
-      moveX 40s linear infinite alternate,
-      moveY 49s linear infinite alternate;
-  }
-
-  @keyframes moveX {
-    from {
-      left: 0;
-    }
-
-    to {
-      left: calc(100vw - 50px);
-    }
-  }
-
-  @keyframes moveY {
-    from {
-      top: 0;
-    }
-
-    to {
-      top: calc(100vh - 50px);
-    }
+    right: 12px;
+    bottom: 12px;
   }
 }
 
